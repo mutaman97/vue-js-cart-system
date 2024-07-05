@@ -40,7 +40,7 @@
                 <p
                     class="max-w-sm mx-auto text-center text-base font-normal leading-7 text-gray-500 mb-9"
                 >
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.
+                    Explore my E-commerce cart system, built with Vue.js and Laravel for a seamless and robust backend integration.
                 </p>
                 <Link
                     href="/products"
@@ -72,6 +72,19 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
 import BlankLayout from "@/Layouts/BlankLayout.vue";
+import {useStore} from "vuex";
+import {toRaw} from "vue";
+
+
+const props = defineProps({
+    products: Object,
+    cartItems: Object,
+});
+
+const store = useStore();
+const existingCartItems = toRaw(props.cartItems).data;
+const products = toRaw(props.products).data;
+store.dispatch("cart/set", existingCartItems);
 </script>
 
 <style scoped>

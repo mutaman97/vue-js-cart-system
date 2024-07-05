@@ -27,14 +27,15 @@
                     </div>
                     <div
                         class="flex flex-col min-[500px]:flex-row min-[500px]:items-center gap-5 py-6  border-b border-gray-200 group">
+
                         <div class="w-full md:max-w-[126px]">
-                            <img src="https://pagedone.io/asset/uploads/1701162850.png" alt="perfume bottle image"
+                            <img src="https://pagedone.io/asset/uploads/1701162866.png" alt="perfume bottle image"
                                  class="mx-auto">
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-4 w-full">
                             <div class="md:col-span-2">
                                 <div class="flex flex-col max-[500px]:items-center gap-3">
-                                    <h6 class="font-semibold text-base leading-7 text-black">Rose Petals Divine</h6>
+                                    <h6 class="font-semibold text-base leading-7 text-black">product.name</h6>
                                     <h6 class="font-normal text-base leading-7 text-gray-500">Perfumes</h6>
                                     <h6 class="font-medium text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-indigo-600">$120.00</h6>
                                 </div>
@@ -184,6 +185,7 @@
 
 
                     <div class="flex items-center justify-end mt-8">
+                        <Link href="/products">
                         <button
                             class="flex items-center px-5 py-3 rounded-full gap-2 border-none outline-0 group font-semibold text-lg leading-8 text-indigo-600 shadow-sm shadow-transparent transition-all duration-500 hover:text-indigo-700">
                             Continue Shopping
@@ -194,6 +196,7 @@
                                     stroke="#4F46E5" stroke-width="1.6" stroke-linecap="round" />
                             </svg>
                         </button>
+                        </Link>
                     </div>
                 </div>
                 <div
@@ -203,7 +206,7 @@
                     <div class="mt-8">
                         <div class="flex items-center justify-between pb-6">
                             <p class="font-normal text-lg leading-8 text-black">3 Items</p>
-                            <p class="font-medium text-lg leading-8 text-black">$480.00</p>
+                            <p class="font-medium text-lg leading-8 text-black">${{ totalPrice.toFixed(2) }}</p>
                         </div>
                         <form>
                             <label class="flex  items-center mb-1.5 text-gray-600 text-sm font-medium">Shipping
@@ -317,6 +320,42 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
 import BlankLayout from "@/Layouts/BlankLayout.vue";
+
+import { toRaw, computed } from "vue";
+import { useStore } from "vuex";
+import {
+    Dialog,
+    DialogPanel,
+    DialogTitle,
+    TransitionChild,
+    TransitionRoot,
+} from "@headlessui/vue";
+
+import { XMarkIcon } from "@heroicons/vue/24/outline";
+
+const store = useStore();
+
+const cartItems = computed(() => store.getters["cart/items"]);
+const isCartOpen = computed(() => store.getters["cart/isOpen"]);
+const totalPrice = computed(() => store.getters["cart/totalPrice"]);
+const removeFromCart = (index) => {
+    store.dispatch("cart/remove", index);
+};
+
+const toggleCart = () => {
+    store.dispatch("cart/toggle");
+};
+
+const incrementQuantity = (index) => {
+    store.dispatch("cart/increment", index);
+};
+
+const decrementQuantity = (index) => {
+    store.dispatch("cart/decrement", index);
+};
+const updateQuantity = (index, quantity) => {
+    store.commit("cart/update", { index, quantity });
+};
 
 </script>
 
