@@ -245,10 +245,10 @@
                     </svg>
                 </Link>
                 <ul class="text-lg flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-16 mb-10 border-b border-gray-200">
-                    <li><a href="#" class=" text-gray-800 hover:text-gray-900">Products</a></li>
-                    <li><a href="#" class=" text-gray-800 hover:text-gray-900">Cart</a></li>
-                    <li><a href="#" class=" text-gray-800 hover:text-gray-900">Blogs</a></li>
-                    <li><a href="#" class=" text-gray-800 hover:text-gray-900">Support</a></li>
+                    <li><Link href="/products" preserve-scroll class=" text-gray-800 hover:text-gray-900">Products</Link></li>
+                    <li><Link href="/cart" preserve-scroll class=" text-gray-800 hover:text-gray-900">Cart</Link></li>
+                    <li><Link href="/" preserve-scroll class=" text-gray-800 hover:text-gray-900">Home</Link></li>
+<!--                    <li><a href="#" class=" text-gray-800 hover:text-gray-900">Support</a></li>-->
                 </ul>
                 <div class="flex space-x-10 justify-center items-center mb-14">
                     <a href="#" class="block  text-gray-900 transition-all duration-500 hover:text-indigo-600 ">
@@ -275,7 +275,7 @@
 
                     </a>
                 </div>
-                <span class="text-lg text-gray-500 text-center block">Powerd by <a href="https://mutaman.elhadi.tech/" target="_blank">© Mutaman Elhadi</a> 2024, All rights reserved.</span>
+                <span class="text-lg text-gray-500 text-center block">Powerd by <a href="https://mutaman.elhadi.tech/" class="font-bold text-purple-800" target="_blank">© Mutaman Elhadi</a> 2024, All rights reserved.</span>
             </div>
         </div>
     </footer>

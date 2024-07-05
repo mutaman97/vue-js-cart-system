@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProductContoller;
+use App\Http\Controllers\ProductController;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
@@ -22,7 +22,7 @@ use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/products', [ProductContoller::class, 'index'])->name('products');
+Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
 Route::delete('/cart/remove/{product_id}', [CartController::class, 'removeItem'])->name('cart.remove');

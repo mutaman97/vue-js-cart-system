@@ -9,7 +9,7 @@ use App\Services\CartService;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class ProductContoller extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,7 +22,7 @@ class ProductContoller extends Controller
         $cartItems = $cartService->getCartItems($userId, $sessionId);
         $cartItemResources = CartItemResource::collection($cartItems);
         $productsResources = ProductResource::collection(Product::all());
-        return Inertia::render('Product', [
+        return Inertia::render('Products', [
             'products' => $productsResources,
             'cartItems' => $cartItemResources,
         ]);
