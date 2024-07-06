@@ -14,6 +14,7 @@ import { XMarkIcon } from "@heroicons/vue/24/outline";
 const store = useStore();
 
 const cartItems = computed(() => store.getters["cart/items"]);
+const hasItemsInCart = computed(() => cartItems.value.length > 0);
 const isCartOpen = computed(() => store.getters["cart/isOpen"]);
 const totalPrice = computed(() => store.getters["cart/totalPrice"]);
 const removeFromCart = (index) => {
@@ -102,7 +103,11 @@ const updateQuantity = (index, quantity) => {
                                             </div>
                                         </div>
 
-                                        <div class="mt-8">
+
+
+
+                                        <div v-if="hasItemsInCart"
+                                            class="mt-8">
                                             <div class="flow-root">
                                                 <ul
                                                     role="list"
@@ -215,6 +220,11 @@ const updateQuantity = (index, quantity) => {
                                                     </li>
                                                 </ul>
                                             </div>
+                                        </div>
+                                        <div
+                                            v-else
+                                        class="mt-20 text-center">
+                                            Oops! your cart is empty.
                                         </div>
                                     </div>
 
