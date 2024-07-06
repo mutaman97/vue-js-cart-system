@@ -1,6 +1,6 @@
 <script setup>
-import { toRaw, computed } from "vue";
-import { useStore } from "vuex";
+import {toRaw, computed} from "vue";
+import {useStore} from "vuex";
 import {
     Dialog,
     DialogPanel,
@@ -9,7 +9,7 @@ import {
     TransitionRoot,
 } from "@headlessui/vue";
 
-import { XMarkIcon } from "@heroicons/vue/24/outline";
+import {XMarkIcon} from "@heroicons/vue/24/outline";
 
 const store = useStore();
 
@@ -33,7 +33,7 @@ const decrementQuantity = (index) => {
     store.dispatch("cart/decrement", index);
 };
 const updateQuantity = (index, quantity) => {
-    store.commit("cart/update", { index, quantity });
+    store.commit("cart/update", {index, quantity});
 };
 </script>
 
@@ -82,7 +82,8 @@ const updateQuantity = (index, quantity) => {
                                         >
                                             <DialogTitle
                                                 class="text-lg font-medium text-gray-900"
-                                                >Shopping cart</DialogTitle
+                                            >Shopping cart
+                                            </DialogTitle
                                             >
                                             <div
                                                 class="ml-3 flex h-7 items-center"
@@ -93,7 +94,7 @@ const updateQuantity = (index, quantity) => {
                                                     @click="toggleCart()"
                                                 >
                                                     <span class="sr-only"
-                                                        >Close panel</span
+                                                    >Close panel</span
                                                     >
                                                     <XMarkIcon
                                                         class="h-6 w-6"
@@ -104,10 +105,8 @@ const updateQuantity = (index, quantity) => {
                                         </div>
 
 
-
-
                                         <div v-if="hasItemsInCart"
-                                            class="mt-8">
+                                             class="mt-8">
                                             <div class="flow-root">
                                                 <ul
                                                     role="list"
@@ -139,7 +138,7 @@ const updateQuantity = (index, quantity) => {
                                                                     <h3>
                                                                         <a
                                                                             href="#"
-                                                                            >{{
+                                                                        >{{
                                                                                 product.name
                                                                             }}</a
                                                                         >
@@ -172,12 +171,16 @@ const updateQuantity = (index, quantity) => {
 
 
                                                                         <button @click="decrementQuantity(index)"
-                                                                            class="group rounded-[50px] border border-gray-200 shadow-sm shadow-transparent p-2.5 flex items-center justify-center bg-white transition-all duration-500 hover:shadow-gray-200 hover:bg-gray-50 hover:border-gray-300 focus-within:outline-gray-300">
-                                                                            <svg class="stroke-gray-900 transition-all duration-500 group-hover:stroke-black"
-                                                                                 width="18" height="19" viewBox="0 0 18 19" fill="none"
-                                                                                 xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M4.5 9.5H13.5" stroke="" stroke-width="1.6" stroke-linecap="round"
-                                                                                      stroke-linejoin="round" />
+                                                                                class="group rounded-[50px] border border-gray-200 shadow-sm shadow-transparent p-2.5 flex items-center justify-center bg-white transition-all duration-500 hover:shadow-gray-200 hover:bg-gray-50 hover:border-gray-300 focus-within:outline-gray-300">
+                                                                            <svg
+                                                                                class="stroke-gray-900 transition-all duration-500 group-hover:stroke-black"
+                                                                                width="18" height="19"
+                                                                                viewBox="0 0 18 19" fill="none"
+                                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                                <path d="M4.5 9.5H13.5" stroke=""
+                                                                                      stroke-width="1.6"
+                                                                                      stroke-linecap="round"
+                                                                                      stroke-linejoin="round"/>
                                                                             </svg>
                                                                         </button>
                                                                         <input type="number" id="number"
@@ -191,11 +194,15 @@ const updateQuantity = (index, quantity) => {
                                                                         <button
                                                                             @click="incrementQuantity(index)"
                                                                             class="group rounded-[50px] border border-gray-200 shadow-sm shadow-transparent p-2.5 flex items-center justify-center bg-white transition-all duration-500 hover:shadow-gray-200 hover:bg-gray-50 hover:border-gray-300 focus-within:outline-gray-300">
-                                                                            <svg class="stroke-gray-900 transition-all duration-500 group-hover:stroke-black"
-                                                                                 width="18" height="19" viewBox="0 0 18 19" fill="none"
-                                                                                 xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M3.75 9.5H14.25M9 14.75V4.25" stroke="" stroke-width="1.6"
-                                                                                      stroke-linecap="round" stroke-linejoin="round" />
+                                                                            <svg
+                                                                                class="stroke-gray-900 transition-all duration-500 group-hover:stroke-black"
+                                                                                width="18" height="19"
+                                                                                viewBox="0 0 18 19" fill="none"
+                                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                                <path d="M3.75 9.5H14.25M9 14.75V4.25"
+                                                                                      stroke="" stroke-width="1.6"
+                                                                                      stroke-linecap="round"
+                                                                                      stroke-linejoin="round"/>
                                                                             </svg>
                                                                         </button>
                                                                     </div>
@@ -223,7 +230,7 @@ const updateQuantity = (index, quantity) => {
                                         </div>
                                         <div
                                             v-else
-                                        class="mt-20 text-center">
+                                            class="mt-20 text-center">
                                             Oops! your cart is empty.
                                         </div>
                                     </div>
@@ -245,7 +252,7 @@ const updateQuantity = (index, quantity) => {
                                             <a
                                                 href="#"
                                                 class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-                                                >Checkout</a
+                                            >Checkout</a
                                             >
                                         </div>
                                         <div

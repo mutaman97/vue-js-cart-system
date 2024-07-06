@@ -4,7 +4,7 @@ import InputError from "@/Components/Atoms/InputError.vue";
 import InputLabel from "@/Components/Atoms/InputLabel.vue";
 import PrimaryButton from "@/Components/Atoms/PrimaryButton.vue";
 import TextInput from "@/Components/Atoms/TextInput.vue";
-import { Head, Link, useForm } from "@inertiajs/vue3";
+import {Head, Link, useForm} from "@inertiajs/vue3";
 import BlankLayout from "@/Layouts/BlankLayout.vue";
 
 defineProps({
@@ -30,23 +30,23 @@ const submit = () => {
 </script>
 
 <template>
-        <section class="flex justify-center relative">
-            <div class="mx-auto max-w-lg px-6 lg:px-8 absolute py-20">
-                <Link href="/">
-                    <svg
-                        class="w-20 h-20 mx-auto lg:mb-11 mb-6"
-                        version="1.1"
-                        id="Layer_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        x="0px"
-                        y="0px"
-                        width="31.06px"
-                        height="30.16px"
-                        viewBox="0 0 31.06 30.16"
-                        style="enable-background:new 0 0 31.06 30.16;"
-                        xml:space="preserve"
-                    >
+    <section class="flex justify-center relative">
+        <div class="mx-auto max-w-lg px-6 lg:px-8 absolute py-20">
+            <Link href="/">
+                <svg
+                    class="w-20 h-20 mx-auto lg:mb-11 mb-6"
+                    version="1.1"
+                    id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px"
+                    y="0px"
+                    width="31.06px"
+                    height="30.16px"
+                    viewBox="0 0 31.06 30.16"
+                    style="enable-background:new 0 0 31.06 30.16;"
+                    xml:space="preserve"
+                >
                       <g>
                         <path
                             style="fill:#5FECFD;"
@@ -86,59 +86,60 @@ const submit = () => {
                           />
                       </g>
                     </svg>
-                </Link>
-                <div class="rounded-2xl bg-white shadow-xl">
-                    <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-                        {{ status }}
-                    </div>
-                    <form @submit.prevent="submit" class="lg:p-11 p-7 mx-auto">
-                        <div class="mb-11">
-                            <h1 class="text-gray-900 text-center font-manrope text-3xl font-bold leading-10 mb-2">Welcome Back</h1>
-                            <p class="text-gray-500 text-center text-base font-medium leading-6">login here</p>
-                        </div>
-
-
-                        <input
-                            id="email"
-                            type="email"
-                            class="w-full h-12 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-6"
-                            v-model="form.email"
-                            required
-                            autofocus
-                            autocomplete="username"
-                            placeholder="Enter your email"
-                        />
-                        <InputError class="mt-2" :message="form.errors.email" />
-
-                        <input
-                            id="password"
-                            type="password"
-                            class="w-full h-12 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-6"
-                            v-model="form.password"
-                            required
-                            autocomplete="current-password"
-                            placeholder="Password"
-                        />
-                        <InputError class="mt-2" :message="form.errors.password" />
-                        <Link
-                            v-if="canResetPassword"
-                            :href="route('password.request')"
-                            class="flex justify-end mb-6"
-                        >
-                            <span class="text-indigo-600 text-right text-base font-normal leading-6">Forgot Password?</span>
-                        </Link>
-
-                        <button
-                            class="w-full h-12 text-white text-center text-base font-semibold leading-6 rounded-full hover:bg-indigo-800 transition-all duration-700 bg-indigo-600 shadow-sm mb-11"
-                            :class="{ 'opacity-25': form.processing }"
-                            :disabled="form.processing"
-                        >
-                            Log in
-                        </button>
-                        <Link href="/register" class="flex justify-center text-gray-900 text-base font-medium leading-6"> Don’t have an account? <span class="text-indigo-600 font-semibold pl-3"> Sign Up</span>
-                        </Link>
-                    </form>
+            </Link>
+            <div class="rounded-2xl bg-white shadow-xl">
+                <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
+                    {{ status }}
                 </div>
+                <form @submit.prevent="submit" class="lg:p-11 p-7 mx-auto">
+                    <div class="mb-11">
+                        <h1 class="text-gray-900 text-center font-manrope text-3xl font-bold leading-10 mb-2">Welcome
+                            Back</h1>
+                        <p class="text-gray-500 text-center text-base font-medium leading-6">login here</p>
+                    </div>
+
+                    <input
+                        id="email"
+                        type="email"
+                        class="w-full h-12 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-6"
+                        v-model="form.email"
+                        required
+                        autofocus
+                        autocomplete="username"
+                        placeholder="Enter your email"
+                    />
+                    <InputError class="mt-2" :message="form.errors.email"/>
+
+                    <input
+                        id="password"
+                        type="password"
+                        class="w-full h-12 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-6"
+                        v-model="form.password"
+                        required
+                        autocomplete="current-password"
+                        placeholder="Password"
+                    />
+                    <InputError class="mt-2" :message="form.errors.password"/>
+                    <Link
+                        v-if="canResetPassword"
+                        :href="route('password.request')"
+                        class="flex justify-end mb-6"
+                    >
+                        <span class="text-indigo-600 text-right text-base font-normal leading-6">Forgot Password?</span>
+                    </Link>
+
+                    <button
+                        class="w-full h-12 text-white text-center text-base font-semibold leading-6 rounded-full hover:bg-indigo-800 transition-all duration-700 bg-indigo-600 shadow-sm mb-11"
+                        :class="{ 'opacity-25': form.processing }"
+                        :disabled="form.processing"
+                    >
+                        Log in
+                    </button>
+                    <Link href="/register" class="flex justify-center text-gray-900 text-base font-medium leading-6">
+                        Don’t have an account? <span class="text-indigo-600 font-semibold pl-3"> Sign Up</span>
+                    </Link>
+                </form>
             </div>
-        </section>
+        </div>
+    </section>
 </template>

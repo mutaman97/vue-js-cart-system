@@ -1,7 +1,7 @@
 <script setup>
-import { toRaw } from "vue";
-import { useStore } from "vuex";
-import { Head } from "@inertiajs/vue3";
+import {toRaw} from "vue";
+import {useStore} from "vuex";
+import {Head} from "@inertiajs/vue3";
 import ProductsList from "@/Components/Organisms/ProductsList.vue";
 import BlankLayout from "@/Layouts/BlankLayout.vue";
 import NewProductsList from "@/Components/Organisms/NewProductsList.vue";
@@ -18,25 +18,13 @@ store.dispatch("cart/set", existingCartItems);
 </script>
 
 <template>
-<!--    <Head title="Home" />-->
-<!--    <DefaultLayout>-->
-<!--        <template #header>-->
-<!--            <h2 class="font-semibold text-xl text-gray-800 leading-tight">-->
-<!--                Products-->
-<!--            </h2>-->
-<!--        </template>-->
-<!--        <section class="mt-14 flex-1">-->
-<!--            <ProductsList :items="products" />-->
-<!--        </section>-->
-<!--    </DefaultLayout>-->
-
     <blank-layout>
         <section class="py-24">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <h2 class="font-manrope font-bold text-4xl text-black mb-8 max-lg:text-center">
-                    Product list
-                </h2>
-                <NewProductsList :items="products" />
+            <div class="bg-white">
+                <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+                    <h2 class="font-manrope font-bold text-4xl text-black mb-8 max-lg:text-center">Products</h2>
+                    <NewProductsList :items="products"/>
+                </div>
             </div>
         </section>
     </blank-layout>

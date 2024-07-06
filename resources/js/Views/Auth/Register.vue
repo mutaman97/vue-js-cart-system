@@ -4,7 +4,7 @@ import InputError from "@/Components/Atoms/InputError.vue";
 import InputLabel from "@/Components/Atoms/InputLabel.vue";
 import PrimaryButton from "@/Components/Atoms/PrimaryButton.vue";
 import TextInput from "@/Components/Atoms/TextInput.vue";
-import { Head, Link, useForm } from "@inertiajs/vue3";
+import {Head, Link, useForm} from "@inertiajs/vue3";
 
 const form = useForm({
     name: "",
@@ -21,101 +21,6 @@ const submit = () => {
 </script>
 
 <template>
-<!--    <DefaultLayout>-->
-<!--        <Head title="Register" />-->
-<!--        <template #header>-->
-<!--            <h2 class="font-semibold text-xl text-gray-800 leading-tight">-->
-<!--                Register-->
-<!--            </h2>-->
-<!--        </template>-->
-<!--        <form @submit.prevent="submit">-->
-<!--            <div>-->
-<!--                <InputLabel for="name" value="Name" />-->
-
-<!--                <TextInput-->
-<!--                    id="name"-->
-<!--                    type="text"-->
-<!--                    class="mt-1 block w-full"-->
-<!--                    v-model="form.name"-->
-<!--                    required-->
-<!--                    autofocus-->
-<!--                    autocomplete="name"-->
-<!--                />-->
-
-<!--                <InputError class="mt-2" :message="form.errors.name" />-->
-<!--            </div>-->
-
-<!--            <div class="mt-4">-->
-<!--                <InputLabel for="email" value="Email" />-->
-
-<!--                <TextInput-->
-<!--                    id="email"-->
-<!--                    type="email"-->
-<!--                    class="mt-1 block w-full"-->
-<!--                    v-model="form.email"-->
-<!--                    required-->
-<!--                    autocomplete="username"-->
-<!--                />-->
-
-<!--                <InputError class="mt-2" :message="form.errors.email" />-->
-<!--            </div>-->
-
-<!--            <div class="mt-4">-->
-<!--                <InputLabel for="password" value="Password" />-->
-
-<!--                <TextInput-->
-<!--                    id="password"-->
-<!--                    type="password"-->
-<!--                    class="mt-1 block w-full"-->
-<!--                    v-model="form.password"-->
-<!--                    required-->
-<!--                    autocomplete="new-password"-->
-<!--                />-->
-
-<!--                <InputError class="mt-2" :message="form.errors.password" />-->
-<!--            </div>-->
-
-<!--            <div class="mt-4">-->
-<!--                <InputLabel-->
-<!--                    for="password_confirmation"-->
-<!--                    value="Confirm Password"-->
-<!--                />-->
-
-<!--                <TextInput-->
-<!--                    id="password_confirmation"-->
-<!--                    type="password"-->
-<!--                    class="mt-1 block w-full"-->
-<!--                    v-model="form.password_confirmation"-->
-<!--                    required-->
-<!--                    autocomplete="new-password"-->
-<!--                />-->
-
-<!--                <InputError-->
-<!--                    class="mt-2"-->
-<!--                    :message="form.errors.password_confirmation"-->
-<!--                />-->
-<!--            </div>-->
-
-<!--            <div class="flex items-center justify-end mt-4">-->
-<!--                <Link-->
-<!--                    :href="route('login')"-->
-<!--                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"-->
-<!--                >-->
-<!--                    Already registered?-->
-<!--                </Link>-->
-
-<!--                <PrimaryButton-->
-<!--                    class="ml-4"-->
-<!--                    :class="{ 'opacity-25': form.processing }"-->
-<!--                    :disabled="form.processing"-->
-<!--                >-->
-<!--                    Register-->
-<!--                </PrimaryButton>-->
-<!--            </div>-->
-<!--        </form>-->
-<!--    </DefaultLayout>-->
-
-
     <section class="flex justify-center relative">
         <div class="mx-auto max-w-lg px-6 lg:px-8 absolute py-20">
             <Link href="/">
@@ -179,8 +84,10 @@ const submit = () => {
                 </div>
                 <form @submit.prevent="submit" class="lg:p-11 p-7 mx-auto">
                     <div class="mb-11">
-                        <h1 class="text-gray-900 text-center font-manrope text-3xl font-bold leading-10 mb-2">Welcome Back</h1>
-                        <p class="text-gray-500 text-center text-base font-medium leading-6">Let’s get started with your 30 days free trail</p>
+                        <h1 class="text-gray-900 text-center font-manrope text-3xl font-bold leading-10 mb-2">Welcome
+                            Back</h1>
+                        <p class="text-gray-500 text-center text-base font-medium leading-6">Let’s get started with your
+                            30 days free trail</p>
                     </div>
 
                     <input
@@ -193,9 +100,7 @@ const submit = () => {
                         autocomplete="name"
                         placeholder="Enter Your Name"
                     />
-                    <InputError class="mt-2" :message="form.errors.name" />
-
-
+                    <InputError class="mt-2" :message="form.errors.name"/>
 
 
                     <input
@@ -208,7 +113,7 @@ const submit = () => {
                         autocomplete="username"
                         placeholder="Enter your email"
                     />
-                    <InputError class="mt-2" :message="form.errors.email" />
+                    <InputError class="mt-2" :message="form.errors.email"/>
 
                     <input
                         id="password"
@@ -219,7 +124,7 @@ const submit = () => {
                         autocomplete="new-password"
                         placeholder="Password"
                     />
-                    <InputError class="mt-2" :message="form.errors.password" />
+                    <InputError class="mt-2" :message="form.errors.password"/>
 
 
                     <input
@@ -249,7 +154,7 @@ const submit = () => {
 
                     <Link
                         :href="route('login')"
-                        class="flex justify-center text-gray-900 text-base font-medium leading-6"                    >
+                        class="flex justify-center text-gray-900 text-base font-medium leading-6">
                         Already registered?
                         <span class="text-indigo-600 font-semibold pl-3"> Login</span>
                     </Link>

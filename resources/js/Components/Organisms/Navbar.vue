@@ -1,7 +1,7 @@
 <script setup>
-import { ref, computed, toRaw } from "vue";
-import { Link } from "@inertiajs/vue3";
-import { useStore } from "vuex";
+import {ref, computed, toRaw} from "vue";
+import {Link} from "@inertiajs/vue3";
+import {useStore} from "vuex";
 import Dropdown from "@/Components/Atoms/Dropdown.vue";
 import DropdownLink from "@/Components/Atoms/DropdownLink.vue";
 
@@ -12,6 +12,7 @@ const totalCartItems = computed(() => toRaw(store.getters["cart/total"]));
 function toggleNavbar() {
     showMenu.value = !showMenu.value;
 }
+
 const toggleCart = () => {
     store.dispatch("cart/toggle");
 };
@@ -90,14 +91,14 @@ const toggleCart = () => {
                             href="#"
                         >
                             <span class="ml-2 relative flex"
-                                ><svg
-                                    class="h-6 w-6 flex-shrink-0 text-white group-hover:text-white"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                >
+                            ><svg
+                                class="h-6 w-6 flex-shrink-0 text-white group-hover:text-white"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                aria-hidden="true"
+                            >
                                     <path
                                         stroke-linecap="round"
                                         stroke-linejoin="round"
@@ -107,7 +108,7 @@ const toggleCart = () => {
                                 <span
                                     v-if="totalCartItems > 0"
                                     class="bg-green-100 custom-notification text-green-800 absolute right-0 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300"
-                                    >{{ totalCartItems }}</span
+                                >{{ totalCartItems }}</span
                                 >
                             </span>
                         </a>

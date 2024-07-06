@@ -1,6 +1,7 @@
 <script setup>
-import { ref } from "vue";
-import { useStore } from "vuex";
+import {ref} from "vue";
+import {useStore} from "vuex";
+
 const store = useStore();
 const showAnimation = ref(false);
 const showSuccess = ref(false);
@@ -24,30 +25,25 @@ defineProps({
 </script>
 
 <template>
-    <img :src="`https://picsum.photos/280/300/?random&id=${data.id}`" alt="Blazer image">
-    <div
-        class="absolute z-10 bottom-3 left-0 mx-3 p-3 bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-indigo-50">
-
-        <div class="flex items-center justify-between mb-2">
-            <h6 class="font-semibold text-base leading-7 text-black ">{{ data.name }}</h6>
-            <h6 class="font-semibold text-base leading-7 text-indigo-600 text-right">$ {{ data.price }}</h6>
+    <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+        <img :src="`https://picsum.photos/1280/1280/?random&id=${data.id}`"
+             alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
+             class="h-full w-full object-cover object-center group-hover:opacity-75">
+    </div>
+    <div class="flex justify-between items-center mt-4">
+        <div>
+            <h3 class="text-sm text-gray-700">{{ data.name }}</h3>
+            <p class="mt-1 text-lg font-medium text-gray-900">$ {{ data.price }}</p>
         </div>
-        <p class="text-xs leading-5 text-gray-500">{{ data.description }}</p>
-
-<!--        <button-->
-<!--            class="bg-indigo-50 text-indigo-600 rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 py-3 px-6 text-sm hover:bg-indigo-100"-->
-<!--        >-->
-
-
-            <button
-                @click="addProductToCart(data)"
-                class="flex items-center justify-center px-2 py-2 font-medium tracking-wide text-indigo-600 capitalize transition-all duration-500 bg-indigo-50 rounded-full hover:bg-indigo-100"
-            >
+        <button
+            @click="addProductToCart(data)"
+            class="flex items-center justify-center px-2 py-2 font-medium tracking-wide text-indigo-600 capitalize transition-all duration-500 bg-indigo-50 rounded-md hover:bg-indigo-100"
+        >
                 <span class="mx-1">
                     <transition name="fade" class="flex" mode="out-in">
                         <template v-if="!showAnimation">
                             <span class="flex"
-                                >
+                            >
 
                                 <svg
                                     class="h-5 w-5 mx-1"
@@ -87,16 +83,18 @@ defineProps({
                                     </svg>
                                     <span class="sr-only">Loading...</span>
                                 </div>
-                                <svg
-                                    v-else
-                                    version="1.1"
-                                    id="Capa_1"
-                                    class="w-5 h-5 text-gray-200 animate-bounce animate-ping dark:text-white fill-green"
-                                    viewBox="0 0 50 50"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    xml:space="preserve"
-                                >
+                                <span v-else
+                                      class="flex">
+                                    <svg
+
+                                        version="1.1"
+                                        id="Capa_1"
+                                        class="w-5 h-5 text-gray-200 animate-bounce animate-ping dark:text-white fill-green"
+                                        viewBox="0 0 50 50"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        xml:space="preserve"
+                                    >
                                     <g
                                         id="SVGRepo_bgCarrier"
                                         stroke-width="0"
@@ -126,11 +124,13 @@ defineProps({
                                         ></polyline>
                                     </g>
                                 </svg>
+                                <span class="mx-1 text-[#25ae88]">Add Success</span>
+                                </span>
                             </div>
                         </template>
                     </transition>
                 </span>
-            </button>
+        </button>
     </div>
 </template>
 <style scoped>
