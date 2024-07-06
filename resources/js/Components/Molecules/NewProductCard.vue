@@ -2,6 +2,18 @@
 import {ref} from "vue";
 import {useStore} from "vuex";
 
+import { toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
+
+const notify = () => {
+    toast("Added To Cart Successfully", {
+        "theme": "auto",
+        "type": "success",
+        "transition": "flip",
+        "dangerouslyHTMLString": true
+    });
+}
+
 const store = useStore();
 const showAnimation = ref(false);
 const showSuccess = ref(false);
@@ -17,8 +29,10 @@ const addProductToCart = async (product) => {
             showSuccess.value = false;
             showAnimation.value = false;
         }, 400);
+        notify()
     }
 };
+
 defineProps({
     data: Object,
 });
